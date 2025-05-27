@@ -1,9 +1,16 @@
-from sqlalchemy.orm import Session, declarative_base
-import random
 import datetime
-from sqlalchemy import Column, Integer, DateTime, ForeignKey, Double, Boolean
-from sqlalchemy import create_engine
+import random
 
+from sqlalchemy import (
+    Boolean,
+    Column,
+    DateTime,
+    Double,
+    ForeignKey,
+    Integer,
+    create_engine,
+)
+from sqlalchemy.orm import Session, declarative_base
 
 N_EXPERIMENTS: int = 25
 N_SAMPLES: int = 1000
