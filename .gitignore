@@ -6,6 +6,8 @@ dev/
 .idea/
 .env
 
+infrastructure/*.txt
+
 *.csr
 *.crt
 *.key
