@@ -8,7 +8,7 @@
 
 - 9th semester Software Engineering student
 - Industry for 1 year
-    - Student Worker in DevOps ~ Mobile Industrial Robots
+  - Student Worker in DevOps ~ Mobile Industrial Robots
 - Studying Master of Science in Software Engineering ~University of Southern Denmark
 - Bachelor in Engineering in Software Engineering ~University of Southern Denmark
 - LinkedIn ~ [linkedin.com/in/oliverfhansen](https://www.linkedin.com/in/oliverfhansen/)
@@ -18,14 +18,13 @@
 ![Anders Launer Bæk-Petersen](https://avatars.githubusercontent.com/u/28479232?v=4)
 
 - PhD Fellow ~ SDU Software Engineering
-    - Understanding the Reliability of Machine Learning
-      Systems from a Software Engineering Perspective
+  - Understanding the Reliability of Machine Learning Systems from a Software Engineering Perspective
 - PhD Fellow ~ SDU Center for Energy Informatics
-    - Transferable AI Model Development Framework for Smart Energy Systems
+  - Transferable AI Model Development Framework for Smart Energy Systems
 - Industry for 4,5 years
-    - Machine Learning Engineer ~ Energinet
-    - Data Scientist ~Esoft R&D
-    - Research Assistant ~Technical University of Denmark
+  - Machine Learning Engineer ~ Energinet
+  - Data Scientist ~Esoft R&D
+  - Research Assistant ~Technical University of Denmark
 - Master of Science in Mathematical Modelling and Computation ~Technical University of Denmark
 - Bachelor of Science in Robot Systems ~University of Southern Denmark
 - LinkedIn ~ [linkedin.com/in/anderslaunerbaek](https://www.linkedin.com/in/anderslaunerbaek/)
@@ -37,8 +36,8 @@ The format of the exercise lectures is as follows:
 - Two modules of 45 minutes each per week.
 - Each module will contain a case, based on the themes of the lecture, where you must pick and connect the appropriate technologies to solve the case, and then apply said technologies.
 - To help familiarize yourselves with the technologies, please refer to the archived exercises for [E24](https://github.com/JakobHviidBDDST/BigDataCourseExercises/tree/main/archive/E24), as these contain guides and usage examples for the technologies.
-- A proposed solution for the case will be published before the next lecture. 
-- The first half of the first module will be used for recap and solution sharing from the previous exercises. 
+- A proposed solution for the case will be published before the next lecture.
+- The first half of the first module will be used for recap and solution sharing from the previous exercises.
 The remainder of the first module and the second module will be used to work with the exercises for the current week.
 - The exercises will be provided in `README.md` file in the respective lecture folder.
 
@@ -151,6 +150,8 @@ the terminal like `kubectl <command> <flags>`.
 You read more about the CLI and how to install it
 here: [install kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl).
 
+> NB: If you are on Windows we highly encourage you to use [scoop](https://scoop.sh) for painlessly installing kubectl CLI.
+
 #### The kubeconfig file
 
 You will receive a kubeconfig file before starting on lecture 1. Your personal config file will be shared by email and
@@ -167,8 +168,7 @@ used by the `kubectl` CLI to connect to the cluster.
 
 #### Wrap up
 
-> All the following exercises assume you have access to the Kubernetes cluster and the `kubectl` CLI installed on your
-> local host.
+> All the following exercises assume you have access to the Kubernetes cluster and the `kubectl` CLI installed on your local host.
 
 ### Exercise 2 - Deploy "Hello World" application
 
