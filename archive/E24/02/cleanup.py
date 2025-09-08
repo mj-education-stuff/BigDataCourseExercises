@@ -4,8 +4,8 @@ import json
 import time
 
 HADOOP_IMAGE = "apache/hadoop:3"
-HDFS_SERVICES_PATH = "../../services/hdfs"
-INTERACTIVE_DEPLOYMENT_PATH = "../../services/interactive/interactive.yaml"
+HDFS_SERVICES_PATH = "../../../services/hdfs"
+INTERACTIVE_DEPLOYMENT_PATH = "../../../services/interactive/interactive.yaml"
 TIME_TO_SLEEP = 3
 
 
