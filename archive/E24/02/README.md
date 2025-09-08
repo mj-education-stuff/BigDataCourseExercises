@@ -11,7 +11,7 @@ information or experience bugs in our examples!
 For progressing in today's exercises we recommend you to look into attaching Visual Studio Code to a running container
 in Kubernetes. This will shorten the development time of services that depend on resources inside Kubernetes.
 Furthermore, a simpler access to the HDFS deployment in Kubernetes. You can navigate to the `services/interactive`
-folder in the repository and read the [README](../../services/interactive/README.md) file to get a better understanding
+folder in the repository and read the [README](../../../services/interactive/README.md) file to get a better understanding
 of how to attach Visual Studio Code to an interactive container in Kubernetes in this course, and you can read further
 about the concept [here](https://code.visualstudio.com/docs/devcontainers/containers) to get a complete overview.
 
@@ -20,10 +20,10 @@ about the concept [here](https://code.visualstudio.com/docs/devcontainers/contai
 ### Exercise 1 - Set up HDFS cluster
 
 The initial task is to set up a HDFS cluster. Please familiarize yourself with and read
-the [README](../../services/hdfs/README.md) file in the `services/hdfs` folder of the repository. This will guide you
+the [README](../../../services/hdfs/README.md) file in the `services/hdfs` folder of the repository. This will guide you
 through the installation of an HDFS cluster on Kubernetes.
 
-**Tasks**: Follow the instructions in the [README](../../services/hdfs/README.md) file to deploy the HDFS cluster.
+**Tasks**: Follow the instructions in the [README](../../../services/hdfs/README.md) file to deploy the HDFS cluster.
 
 **Validate**: Verify that the HDFS cluster is up and running. There will be a single namenode and three datanodes inside
 your namespace as illustrated in the chunk below.
@@ -43,12 +43,12 @@ Now that we have a HDFS cluster lets now try and use it. HDFS has a CLI tool for
 the cluster is running inside of Kubernetes, we also need to access it from inside Kubernetes.
 
 You need to create an interactive container using either the `apache/hadoop:3` image or the image described in
-the [README](../../services/interactive/README.md) similar to how you created an interactive container with
+the [README](../../../services/interactive/README.md) similar to how you created an interactive container with
 Ubuntu [last week](../01/README.md#exercise-6---interactive-container). The latter image contains the majority of the
 logic needed for the future exercises.
 
 **Task**: Create interactive container with the either `apache/hadoop:3` image
-or [interactive.yaml](../../services/interactive/interactive.yaml).
+or [interactive.yaml](../../../services/interactive/interactive.yaml).
 
 HDFS works much like a normal file system. The commands to interact with HDFS are also similar to the commands you would
 use on a Unix system. For example, to list files and folders in a directory you would use the following command
@@ -137,14 +137,14 @@ URL [https://www.gutenberg.org/files/11/11-0.txt](https://www.gutenberg.org/file
 Instead of manually specifying the URI ("hdfs://namenode:9000") and making sure you connect to the correct name node you
 can let the HDFS client decide this for you using a HDFS config file(s) (called "core-site.xml" and "hdfs-site.xml").
 
-The [hdfs-cli.yaml](../../services/hdfs/hdfs-cli.yaml) file in the `services/hdfs` folder creates a Kubernetes resource
+The [hdfs-cli.yaml](../../../services/hdfs/hdfs-cli.yaml) file in the `services/hdfs` folder creates a Kubernetes resource
 called a ConfigMap. A ConfigMap is a resource that contains key-value pairs used for configuration. It can be used in
 various ways, but we want to mount the ConfigMap as a file to the interactive container.
 
 **Task**: Before we mount it we want to take a look at the ConfigMap and try to understand it.
 
 **Task**: To create the interactive container and mount the config, use the
-provided [hdfs-cli.yaml](../../services/hdfs/hdfs-cli.yaml) file.
+provided [hdfs-cli.yaml](../../../services/hdfs/hdfs-cli.yaml) file.
 
 ### Exercise 5 (optional) - Interacting with HDFS using Web UI
 
@@ -175,7 +175,7 @@ We now want to try to interact with the HDFS cluster using Python. To do this, t
 **Tasks**:
 
 1. Create
-   an [interactive container](../../services/interactive/README.md#attach-visual-studio-code-to-a-running-container) and
+   an [interactive container](../../../services/interactive/README.md#attach-visual-studio-code-to-a-running-container) and
    attach Visual Studio Code to it.
 1. Copy the [example.py](./example.py) and [src/client.py](./src/client.py) files to the container.
 1. Install `hdfs` library using `pip install hdfs` in the container, if needed.
