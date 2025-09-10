@@ -4,8 +4,8 @@ This week's exercises will use the case-based structure described in the general
 
 - You will be presented with a case that needs solving.
 - You must design the architecture you believe can solve this problem (use your preferred drawing tool, e.g., draw.io, Excalidraw, etc.).
-    - Ideally, using the technologies covered in the course so far.
-    - You will receive feedback on your proposed architecture from the instructors.
+  - Ideally, using the technologies covered in the course so far.
+  - You will receive feedback on your proposed architecture from the instructors.
 - Once the architecture has been drawn, try to assemble it using the selected technologies and blueprints.
 
 The process can be visualized as follows:
@@ -28,9 +28,6 @@ flowchart LR
     test-->|"If not compliant with the requirements"|arch
     test-->|"If compliant with the requirements"|stop
 ```
-
-
-
 
 ## New Technologies
 
@@ -55,7 +52,6 @@ ReadBooks Inc. needs to store digital copies of all their books (+10M) containin
 - How to read and write data in the chosen format
 - How to query data in the chosen format
 
-
 ### Remember to
 
 - Identify bottlenecks.
@@ -64,6 +60,6 @@ ReadBooks Inc. needs to store digital copies of all their books (+10M) containin
 - Address data flow.
 - Address how processed results will be accessed/presented.
 - Present arguments for:
-    - The chosen file format.
-    - The chosen architecture.
-    - The chosen technologies.
+  - The chosen file format.
+  - The chosen architecture.
+  - The chosen technologies.
