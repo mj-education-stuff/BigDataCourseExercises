@@ -41,7 +41,7 @@ PowerGrid Analytics LLC monitors a electric power grid, where they measure the w
 
 However, they already have large amounts of telemetry on the grid stored in a SQL based database, that needs to be integrated into a new system with the continuous streams of data.
 
-There are also rumors that some old employees of theirs have mountains of unorganized data stored outside of their databses, that they say is essential to the running of the grid...👷🏽‍♂️
+There are also rumors that some old employees of theirs have mountains of unorganized data stored outside of their databases, that they say is essential to the running of the grid...👷🏽‍♂️
 
 ### Solution Requirements
 
