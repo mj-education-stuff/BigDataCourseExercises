@@ -37,25 +37,26 @@ For some general quick start guidance on utilising the technologies, please view
 
 ## Case Description
 
-PowerGrid Analytics LLC monitors a electric power grid, where they measure the wattage use, they get their data from multiple data sources with variable sample rates, where each data source has a unique ID. They need to capture and store this data in real time.
+PowerGrid Analytics LLC monitors an electric power grid, where they measure the wattage used. They obtain their data from multiple sources with different sample rates, each identified by a unique ID. They need to collect and store this data immediately.
 
-However, they already have large amounts of telemetry on the grid stored in a SQL based database, that needs to be integrated into a new system with the continuous streams of data.
+However, they already have large amounts of telemetry on the grid stored in a SQL-based database that needs to be integrated into a new system with continuous data streams.
 
-There are also rumors that some old employees of theirs have mountains of unorganized data stored outside of their databases, that they say is essential to the running of the grid...👷🏽‍♂️
+There are also rumors that some former employees have mountains of unorganized data stored outside their databases, which they claim is essential to the operation of the grid...👷🏽‍♂️
+
 
 ### Solution Requirements
 
-- The solution must ingest large amounts data from multiple data sources in real time.
-- The solution should be able to ingest structured database information.
-- The solution should be able to ingest unstructured data.
+- The solution must ingest large amounts of data from multiple sources in real time.
+- The solution should be capable of ingesting structured database information. 
+- The solution should be capable of processing unstructured data. 
 - Streams should be routed and processed by sensor ID.
 - The solution must persist the data to a distributed filesystem.
 
 ### Demonstrate
 
-- How to do live ingestion data from multiple sources.
+- How to do live ingestion of data from multiple sources.
 - How to ingest structured data from a database.
-- How to move data from a stream processing platform to long term distributed storage.
+- How to transfer data from a stream processing platform to long-term distributed storage.
 - How to process and route streaming data in real-time.
 
 ### Remember to
