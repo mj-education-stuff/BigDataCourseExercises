@@ -1,42 +1,45 @@
 import os
-import time
 from pathlib import Path
 
+import pandas as pd
 from dotenv import load_dotenv
-from src.groups import parse_groups_from_form
-from src.msg import SLEEP_TIME, EmailClient
-from src.students import KUBECONFIG_PATTERN, STUDENT_MAIL_PATTERN
+from src.msg import EmailClient, SMTPServer
 
 if __name__ == "__main__":
-
     load_dotenv(Path(__file__).resolve().parent / ".env")
 
-    data_path: Path = Path(os.getenv("DATA_DIR", "..."))
-    assert data_path != "...", "Please cd into directory of this file."
+    attachment_path = Path(
+        os.getenv("KUBECONFIGS_DIR", Path(__file__).resolve().parent.parent / "tmp")
+    )
+    df = pd.read_csv(attachment_path.parent / "data/project_groups.csv", sep=";")
+    attachment_files = list(attachment_path.glob("bd-gr-*.yaml"))
+    assert len(attachment_files) == 10, len(attachment_files)
 
-    filename: Path = data_path / os.getenv("FORM_FILENAME_GROUPS")
-    df = parse_groups_from_form(filename)
+    ec = EmailClient(
+        email=os.getenv("EMAIL", "<email>"),
+        password=os.getenv("PASSWORD", "<password>"),
+        smtp_server=SMTPServer.SDU,
+    )
 
-    # Path to folder with kubeconfig files
-    data_path_kubeconfig: Path = data_path / os.getenv("KUBECONFIGS_DIR_GROUPS")
-    k8sconfigs = list(data_path_kubeconfig.rglob(f"*{KUBECONFIG_PATTERN}"))
+    for idx, (id, students) in df.iterrows():
+        students = students.split(", ")
+        attachment_file = [
+            i
+            for i in attachment_files
+            if i.name.startswith(f"bd-gr-{str(id).zfill(2)}")
+        ][0]
 
-    for k8sconfig in k8sconfigs:
-        ec = EmailClient(
-            email=os.getenv("EMAIL", "<client_email>"),
-            password=os.getenv("PASSWORD", "<client_password>"),
-        )
+        for user_name in students:
+            receiver_email: str = user_name + "@student.sdu.dk"
 
-        group_id = k8sconfig.name.replace(KUBECONFIG_PATTERN, "")
-        for receiver_email in df.loc[df["ID"] == group_id, "value"]:
-            receiver_email += STUDENT_MAIL_PATTERN
+            print(
+                f"Sending to {user_name} at {receiver_email} for group {id} with attachment {attachment_file.name}"
+            )
 
             msg = ec.create_msg(
                 receiver_email=receiver_email,
-                subject=f"[{group_id}] - Kubeconfig for the project in Big Data and Data Science Technology, E24",
-                body="Dear student,\n\nHere is the kubeconfig file for the Kubernetes cluster you need for your project in the course Big Data and Data Science Technology, E24.\n\nBest regards,\nAnders Launer Bæk-Petersen\n\n",
-                attachment=k8sconfig,
+                subject="[Kubeconfig] - Kubeconfig for project work in Big Data and Data Science Technology, E25",
+                body=f"Dear {user_name},\n\nHere is the kubeconfig file for the Kubernetes cluster you need for your project in the course Big Data and Data Science Technology, E25.\n\nBest regards,\nAnders Launer Bæk-Petersen\n\n",
+                attachment=attachment_file,
             )
-            ec.send_msg(receiver_email, msg)
-
-        time.sleep(SLEEP_TIME)
+            # ec.send_msg(receiver_email, msg)
