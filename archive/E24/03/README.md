@@ -208,7 +208,7 @@ to produce sensor samples directly to Kafka.
 **Task**: Now that you have created the producer program it is time to run it.
 
 **Notice**: We recommend to use an interactive container and attach to it
-using [vscode](../../services/interactive/README.md#attach-visual-studio-code-to-a-running-container) as we did last
+using [vscode](../../../services/interactive/README.md#attach-visual-studio-code-to-a-running-container) as we did last
 time in lecture 2.
 
 **Verification**: To verify that the program is producing messages to the `INGESTION` topic. Open Redpanda
@@ -386,7 +386,7 @@ The module of interest is
 the [HDFS 2 Sink Connector](https://docs.confluent.io/kafka-connectors/hdfs/current/overview.html) created by a company
 called Confluent. The module will be accessible through the ready-running `kafka-connect` service. The creation of the
 underlying image of our `kafka-connect` service can be further explored
-here: [README.md](../../services/kafka-connect/README.md).
+here: [README.md](../../../services/kafka-connect/README.md).
 
 ***NB***: This connector module will work with our installation of HDFS despite the various version numbers. This module
 is under the [Confluent Community License v1.0](https://www.confluent.io/confluent-community-license/) which enables
