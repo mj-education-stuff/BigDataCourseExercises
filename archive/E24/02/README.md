@@ -237,6 +237,8 @@ We will now try to save a Parquet file to HDFS.
 1. Run the [`counting-parquet`](./counting-parquet.py) file.
 1. Read and output the result of the stored files directly from HDFS using HDFS CLI.
     1. How many column do the dataframe have?
+  
+**Notice:** The Hadoop CLI (`hdfs dfs -cat ...`) cannot read Parquet files directly because they are binary.
 
 ### Exercise 10 - Create six fictive data sources
 
